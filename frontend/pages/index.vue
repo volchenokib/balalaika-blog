@@ -1,34 +1,28 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        balalaika
-      </h1>
-      <div class="links">
-        <a
-          href="https://github.com/volchenokib/balalaika-blog"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/volchenokib/balalaika-blog"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <Articles :articles="articles" />
   </div>
 </template>
 
 <script>
-export default {};
+import articlesQuery from "~/apollo/queries/article/articles";
+
+export default {
+  data() {
+    return {
+      articles: []
+    };
+  },
+  apollo: {
+    articles: {
+      prefetch: true,
+      query: articlesQuery,
+      variables() {
+        return { id: parseInt(this.$route.params.id) };
+      }
+    }
+  }
+};
 </script>
 
 <style>

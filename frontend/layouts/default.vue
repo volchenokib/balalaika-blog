@@ -1,20 +1,48 @@
 <template>
   <div>
-    <Nuxt />
+    <header>
+      <h1>Balalaika Blog</h1>
+      <nav>
+        <ul>
+          <li v-for="category in categories" :key="category.id">
+            <router-link
+              class="uk-modal-close"
+              :to="{ name: 'categories-id', params: { id: category.id } }"
+              tag="a"
+              >{{ category.name }}
+            </router-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>
 
+<script>
+import categoriesQuery from "~/apollo/queries/category/categories";
+
+export default {
+  data() {
+    return {
+      categories: []
+    };
+  },
+  apollo: {
+    categories: {
+      prefetch: true,
+      query: categoriesQuery
+    }
+  }
+};
+</script>
+
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
