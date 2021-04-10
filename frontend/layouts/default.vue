@@ -1,10 +1,14 @@
 <template>
   <div>
-    <header>
-      <h1>Balalaika Blog</h1>
+    <header class="flex flex-row my-4 ml-8">
+      <div class="flex-grow">logo</div>
       <nav>
-        <ul>
-          <li v-for="category in categories" :key="category.id">
+        <ul class="flex flex-row">
+          <li
+            v-for="category in categories"
+            :key="category.id"
+            class="mr-8 uppercase"
+          >
             <router-link
               class="uk-modal-close"
               :to="{ name: 'categories-id', params: { id: category.id } }"
@@ -15,7 +19,8 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="mx-8">
+      <h1 class="text-6xl mt-32 uppercase">Balalaika Blog</h1>
       <Nuxt />
     </main>
   </div>
