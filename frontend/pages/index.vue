@@ -1,7 +1,8 @@
 <template>
-  <div class="container">
-    <Articles :articles="articles" />
-  </div>
+  <Articles :articles="articles" />
+  <!-- <div class="container">
+   
+  </div> -->
 </template>
 
 <script>

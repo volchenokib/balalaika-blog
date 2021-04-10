@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="flex flex-row my-4 ml-8">
+    <header class="flex flex-row items-center h-12 ml-8 sticky top-0">
       <div class="flex-grow">logo</div>
       <nav>
         <ul class="flex flex-row">
@@ -20,7 +20,7 @@
       </nav>
     </header>
     <main class="mx-8">
-      <h1 class="text-6xl mt-32 uppercase">Balalaika Blog</h1>
+      <h1 class="text-6xl mt-32 mb-20 font-bold uppercase">Balalaika Blog</h1>
       <Nuxt />
     </main>
   </div>
