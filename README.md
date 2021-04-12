@@ -1,6 +1,24 @@
-# frontend
+# It's just a blog
 
-## Build Setup
+## Backend
+
+```bash
+# install dependencies
+$ npm install
+
+# start a backend with autoReload enabled.
+$ npx strapi develop
+
+# start backend with autoReload disabled.
+$ npx strapi start
+
+# builds your admin panel.
+$ npx strapi build
+```
+
+## Frontend
+
+### Build Setup
 
 ```bash
 # install dependencies
