@@ -16,6 +16,8 @@ $ npx strapi start
 $ npx strapi build
 ```
 
+For detailed explanation on how things work, check out [Strapi.io docs](https://strapi.io/documentation/developer-docs/latest/developer-resources/cli/CLI.html#strapi-new).
+
 ## Frontend
 
 ### Build Setup
